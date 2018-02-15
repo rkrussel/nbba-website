@@ -16,7 +16,7 @@ function nbba_front_page_content() {
 
 <h1>Welcome to the National Beep Baseball Association</h1>
 
-Hello, testing Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molestie appareat et quo. Ex delicata sapientem sit, per reprimique contentiones no, habeo persius phaedrum ne ius. Cu rebum ponderum mei. Dolores democritum reformidans an nec, ancillae maluisset concludaturque sed cu, eu sed nemore euismod delicatissimi. Ex suscipit incorrupte cum, at mel animal mnesarchum. In primis habemus splendide cum, feugiat incorrupte at vix.</p>
+testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molestie appareat et quo. Ex delicata sapientem sit, per reprimique contentiones no, habeo persius phaedrum ne ius. Cu rebum ponderum mei. Dolores democritum reformidans an nec, ancillae maluisset concludaturque sed cu, eu sed nemore euismod delicatissimi. Ex suscipit incorrupte cum, at mel animal mnesarchum. In primis habemus splendide cum, feugiat incorrupte at vix.</p>
 
 <p>His cu illud ceteros salutatus, sed mazim principes cu, vix et labores facilisi. Pri an odio libris discere. Sea ei adipisci sententiae, cu usu movet consequat. Philosophia definitionem eum ad. Et cibo laudem per, adipisci voluptaria dissentiunt ea usu, utinam repudiare elaboraret at mea.</p>
 
