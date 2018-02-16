@@ -76,45 +76,45 @@ function winwar_populate_dropdown_with_posts($form){
     return $form;
 } add_filter('gform_pre_render', 'winwar_populate_dropdown_with_posts');
 
-/** Add Status Updates post type **/
+/** Add News and Announcements feature **/
 
 // Register Custom Post Type
 function custom_post_type() {
 
 	$labels = array(
-		'name'                  => _x( 'Status Updates', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Status Update', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Status Updates', 'text_domain' ),
-		'name_admin_bar'        => __( 'Status Update', 'text_domain' ),
-		'archives'              => __( 'Status Update Archives', 'text_domain' ),
-		'attributes'            => __( 'Status update Attributes', 'text_domain' ),
+		'name'                  => _x( 'News Items', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'News Item', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'News Updates', 'text_domain' ),
+		'name_admin_bar'        => __( 'News Updates', 'text_domain' ),
+		'archives'              => __( 'News Update Archives', 'text_domain' ),
+		'attributes'            => __( 'Item Attributes', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
-		'all_items'             => __( 'All Updates', 'text_domain' ),
-		'add_new_item'          => __( 'Add New Update', 'text_domain' ),
+		'all_items'             => __( 'All News Updates', 'text_domain' ),
+		'add_new_item'          => __( 'Add New News Update', 'text_domain' ),
 		'add_new'               => __( 'Add New', 'text_domain' ),
-		'new_item'              => __( 'New Update', 'text_domain' ),
-		'edit_item'             => __( 'Edit Update', 'text_domain' ),
-		'update_item'           => __( 'Update Status Update', 'text_domain' ),
-		'view_item'             => __( 'View Update', 'text_domain' ),
-		'view_items'            => __( 'View Updates', 'text_domain' ),
-		'search_items'          => __( 'Search Update', 'text_domain' ),
+		'new_item'              => __( 'New News Update', 'text_domain' ),
+		'edit_item'             => __( 'Edit News Update', 'text_domain' ),
+		'update_item'           => __( 'Update News Update', 'text_domain' ),
+		'view_item'             => __( 'View News Update', 'text_domain' ),
+		'view_items'            => __( 'View News Updates', 'text_domain' ),
+		'search_items'          => __( 'Search News Update', 'text_domain' ),
 		'not_found'             => __( 'Not found', 'text_domain' ),
 		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
 		'featured_image'        => __( 'Featured Image', 'text_domain' ),
 		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
 		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
 		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
-		'insert_into_item'      => __( 'Insert into Update', 'text_domain' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this Update', 'text_domain' ),
-		'items_list'            => __( 'Updates list', 'text_domain' ),
-		'items_list_navigation' => __( 'Updates list navigation', 'text_domain' ),
-		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into News Update', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this News Update', 'text_domain' ),
+		'items_list'            => __( 'News Updates list', 'text_domain' ),
+		'items_list_navigation' => __( 'News Updates list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter News Updates list', 'text_domain' ),
 	);
 	$args = array(
-		'label'                 => __( 'Status Update', 'text_domain' ),
-		'description'           => __( 'Used to track changes and modifications mae to custom theme development for Hero House Creative.', 'text_domain' ),
+		'label'                 => __( 'News Item', 'text_domain' ),
+		'description'           => __( 'News and announcements from around the league.', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'comments' ),
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -123,13 +123,13 @@ function custom_post_type() {
 		'menu_position'         => 5,
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
-		'can_export'            => true,
+		'can_export'            => false,
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
-		'capability_type'       => 'post',
+		'capability_type'       => 'page',
 	);
-	register_post_type( 'status_update', $args );
+	register_post_type( 'news', $args );
 
 }
 add_action( 'init', 'custom_post_type', 0 );

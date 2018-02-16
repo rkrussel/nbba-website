@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
 ---
@@ -73,7 +73,27 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 
 <div class="block">
 <h2>Breaking News</h2>
-<p>News and announcements block goes here.</p>
+
+<?php
+
+	$news = array(
+	'post_type' => 'news');
+
+	$newsblock = new wp_query($news);
+	if($newsblock->have_posts()) {
+
+	echo '<ul>';
+
+	while($newsblock->have_posts()): $newsblock->the_post();
+
+	echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> &mdash; ' . get_the_date('M j') . '</li>';
+
+	endwhile;
+	echo '</ul>';
+	wp_reset_postdata();
+}
+?>
+
 </div>
 
 <div class="block">
