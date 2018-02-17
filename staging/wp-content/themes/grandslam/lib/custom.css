@@ -38,6 +38,14 @@ Front Page
 	list-style-type: none!Important;
 }
 
+.no-bullets {
+	list-style-type: none;
+}
+
+.no-bullets li {
+	list-style-type: none!Important;
+}
+
 
 /**
 ---
