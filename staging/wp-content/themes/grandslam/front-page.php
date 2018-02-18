@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
 ---
@@ -22,11 +22,11 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 
 <nav class="quick-actions">
 <ul>
-<li><a href="#">Locate a team</a></li>
+<li><a href="' . get_site_url() . '/teams/">Locate a team</a></li>
 <li><a href="#">Start a new team</a></li>
-<li><a href="#">Purchase equipment</a></li>
+<li><a href="' . get_site_url() . '/equipment/">Purchase equipment</a></li>
 <li><a href="#">Get 2018 World Series info</a></li>
-<li><a href="#">Make a donation</a></li>
+<li><a href="' . get_site_url() . '/donate/">Make a donation</a></li>
 </ul>
 </nav>
 
@@ -72,21 +72,54 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 </div>
 
 <div class="block">
-<h2>Breaking News</h2>
-<p>News and announcements block goes here.</p>
+<h2><a href="' . get_site_url() . '" title="Go to the NBBA news archive.">Breaking News</a></h2>
+
+<?php
+
+	$news = array(
+	'post_type' => 'news',
+	'posts_per_page' => 5);
+
+	$newsblock = new wp_query($news);
+	if($newsblock->have_posts()) {
+	echo '<ul class="no-bullets">';
+	while($newsblock->have_posts()): $newsblock->the_post();
+	echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> - ' . get_the_date('M j') . '</li>';
+
+	endwhile;
+	echo '</ul>';
+	wp_reset_postdata();
+}
+?>
+
 </div>
 
 <div class="block">
-<h2>Latest on NBBA.org</h2>
-<p>Blog block goes here.</p>
+<h2><a href="' . get_site_url() . '" title="Go to the NBBA blog.">Latest on NBBA.org</a></h2>
+<?php
+
+$blog = array(
+	'post_type' => 'post',
+	'posts_per_page' => 5);
+$blogblock = new wp_query($blog);
+	if($blogblock->have_posts()) {
+	echo '<ul class="no-bullets">';
+	while($blogblock->have_posts()): $blogblock->the_post();
+	echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> - ' . get_the_date('M j') . '</li>';
+	endwhile;
+	echo '</ul>';
+	wp_reset_postdata();
+}
+?>
+
 </div>
 
 <div class="block">
 <h2>Get in the Game</h2>
 <ul class="block-a4-list">
-<li><a href="#">Make a donation</a></li>
+<li><a href="' . get_site_url() . '/donate/">Make a donation</a></li>
 <li><a href="#">Become a sponsor</a></li>
-<li><a href="#">Find a team near you</a></li>
+<li><a href="' . get_site_url() . '/teams/">Find a team near you</a></li>
 <li><a href="#">Start a new team</a></li>
 </ul>
 </div>
