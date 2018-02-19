@@ -36,7 +36,7 @@ define( 'CHILD_THEME_VERSION', '1.0' );
 add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
 // Add Accessibility support.
-add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
+add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'rems', 'search-form', 'skip-links' ) );
 
 // Add viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );

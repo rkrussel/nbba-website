@@ -61,3 +61,26 @@ function nbba_creds() {
 $creds = '</p>&copy; ' . date('Y') . ' <a href="' . get_site_url() . '" rel="nofollow">National Beep Baseball Association</a></p>';
 return $creds;
 }
+
+/** Add navigation, search and utility options **/
+
+remove_action('genesis_header_right', 'genesis_do_header_right');
+add_action('genesis_header_right', 'JR_header_right');
+function JR_header_right() {
+
+	echo '<nav aria-label="Main Menu">';
+	      wp_nav_menu( array(
+	'wp_term' => 'Primary',
+	'container'      => false,
+	'menu_class'     => 'main-navigation') );
+
+	echo '</nav>';
+	get_search_form();
+	echo '<nav aria-label="Utility">';
+	echo '<ul class="utility-links">';
+	echo '<li><a href=#">Util 1</a></li>';
+	echo '<li><a href="#">Util 2</a></li>';
+	echo '<li><a href="#">Util 3</a></li>';
+	echo '</ul>';
+	echo '</nav>';
+}
