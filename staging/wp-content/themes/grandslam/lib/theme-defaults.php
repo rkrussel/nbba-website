@@ -72,7 +72,7 @@ function JR_header_right() {
 	      wp_nav_menu( array(
 	'wp_term' => 'Primary',
 	'container'      => false,
-	'menu_class'     => 'main-navigation') );
+	'menu_class'     => 'genesis-nav-menu') );
 
 	echo '</nav>';
 	get_search_form();
