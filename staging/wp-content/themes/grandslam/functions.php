@@ -103,6 +103,5 @@ function genesis_sample_comments_gravatar( $args ) {
 
 add_action('wp_enqueue_scripts', 'nbba_extra_scripts');
 function nbba_extra_scripts() {
-
-wp_enqueue_script('accessible-tabpanel', CHILD_URL . '/js/a11y-tablist.js');
+wp_enqueue_script( 'accessible-tabpanel2', CHILD_URL . '/js/van11y-accessible-tab-panel-aria.js', false, null );
 }
