@@ -1,5 +1,4 @@
 <?php
-
 /**
 ---
 Template name: Front page
@@ -33,16 +32,20 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 <div class="grid-blocks">
 <div class="block">
 <h2>Beep Baseball 101</h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Beep Baseball 101" width="454" height="256" class="block-img">
 <p>Beep Baseball 101 content goes here.</p>
 </div>
 
 <div class="block">
 <h2>Player Spotlight</h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Player Spotlight" width="454" height="256" class="block-img">
 <p>Player Spotlight loop block goes here.</p>
 </div>
 
 <div class="block">
 <h2>Between the Lines</h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Between the lines" width="454" height="256" class="block-img">
+	<div role="application">
 <div class="js-tabs">
 <ul class="js-tablist" data-existing-hx="h2">
 <li class="js-tablist__item"><a href="#photos" class="js-tablist__link">Photos</a></li>
@@ -51,26 +54,29 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 </ul>
 
 <div class="js-tabcontent" id="photos">
-<h2>Photos</h2>
+<h2 class="invisible">Photos</h2>
 </div>
 
 <div class="js-tabcontent" id="videos">
-<h2>Videos</h2>
+<h2 class="invisible">Videos</h2>
 </div>
 
 <div class="js-tabcontent" id="podcasts">
-<h2>Podcasts</h2>
+<h2 class="invisible">Podcasts</h2>
 </div>
 </div>
 </div>
+	</div>
 
 <div class="block">
 <h2>On Deck</h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="On Deck" width="454" height="256" class="block-img">
 <p>Calendar block goes here.</p>
 </div>
 
 <div class="block">
 <h2><a href="' . get_site_url() . '" title="Go to the NBBA news archive.">Breaking News</a></h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Breaking News" width="454" height="256" class="block-img">
 
 <?php
 
@@ -94,6 +100,7 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 
 <div class="block">
 <h2><a href="' . get_site_url() . '" title="Go to the NBBA blog.">Latest on NBBA.org</a></h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Latest on NBBA.org" width="454" height="256" class="block-img">
 <?php
 
 $blog = array(
@@ -114,6 +121,7 @@ $blogblock = new wp_query($blog);
 
 <div class="block">
 <h2>Get in the Game</h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Get in the Game" width="454" height="256" class="block-img">
 <ul class="block-a4-list">
 <li><a href="' . get_site_url() . '/donate/">Make a donation</a></li>
 <li><a href="#">Become a sponsor</a></li>
@@ -124,6 +132,7 @@ $blogblock = new wp_query($blog);
 
 <div class="block">
 <h2>Sponsors</h2>
+	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Sponsors" width="454" height="256" class="block-img">
 <p>Sponsor block and logos go here.</p>
 </div>
 
