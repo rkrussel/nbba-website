@@ -12,6 +12,70 @@ Table of contents
 
 /**
 ---
+Global
+---
+**/
+
+p.site-title {
+	display: none;
+}
+
+/**
+---
+Header
+---
+**/
+
+.site-header {
+	background-color: #21317B;
+	height: 150px!Important;
+}
+
+.title-area {
+	width: 14%!Important;
+}
+
+.site-header .widget-area {
+	float: left;
+	width: 87%!Important;
+}
+
+.search-form {
+	display: inline;
+	float: left;
+	width: 250px;
+}
+
+.search-form input[type="search"] {
+	height: 12px;
+	width: 200px;
+}
+
+.search-form input[type="submit"] {
+	display: inline!Important;
+	text-indent: -999px;
+	width: 1px!Important;
+	height: 1px!Important;
+}
+
+/**
+---
+Navigation
+---
+**/
+
+.genesis-nav-menu {
+	display: inline!Important;
+	float: left;
+	width: 700px;
+}
+
+.genesis-nav-menu a {
+	color: white;
+}
+
+/**
+---
 Front Page
 ---
 **/
@@ -140,3 +204,61 @@ border-radius: 0;
 	left: -300em; 
 	top: -30em; 
 } 
+
+.utility-links {
+	display: inline;
+	list-style-type: none;
+	width: 50px;
+}
+
+.utility-links li {
+	display: inline;
+}
+
+/**
+---
+Accessible Tab Panel
+---
+**/
+
+.invisible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+.js-tablist {
+  margin: 0;
+  padding: 0;
+}
+
+.js-tablist__item {
+  display: inline-block;
+}
+
+.js-tablist__link {
+  display: inline-block;
+  padding: 1em  2em;
+  background: #f2f2f2;
+  cursor: pointer;
+  color: #148297;
+}
+
+[aria-selected="true"].js-tablist__link {
+  color: #000;
+}
+
+.js-tabcontent {
+  background: #f2f2f2;
+  padding: 1em;
+}
+
+[aria-hidden="true"].js-tabcontent {
+  display: none;
+}

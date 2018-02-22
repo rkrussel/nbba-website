@@ -43,25 +43,23 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 
 <div class="block">
 <h2>Between the Lines</h2>
-<div role="application">
-<div id="tabpanel1" class="tabpanel">
-<ul class="tablist" role="tablist">
-<li id="tab1" class="tab selected" aria-controls="panel1" aria-selected="true" role="tab" tabindex="0">Photos</li>
-<li id="tab2" class="tab" aria-controls="panel2" aria-selected="false" role="tab" tabindex="0">Videos</li>
-<li id="tab3" class="tab" aria-controls="panel3" aria-selected="false" role="tab" tabindex="0">Podcasts</li>
+<div class="js-tabs">
+<ul class="js-tablist" data-existing-hx="h2">
+<li class="js-tablist__item"><a href="#photos" class="js-tablist__link">Photos</a></li>
+<li class="js-tablist__item"><a href="#videos" class="js-tablist__link">Videos</a></li>
+<li class="js-tablist__item"><a href="#podcasts" class="js-tablist__link">Podcasts</a></li>
 </ul>
 
-<div id="panel1" class="panel" aria-labelledby="tab1" role="tabpanel">
-<h3>Photos</h3>
+<div class="js-tabcontent" id="photos">
+<h2>Photos</h2>
 </div>
 
-<div id="panel2" class="panel" aria-labelledby="tab2" role="tabpanel">
-<h3>Videos</h3>
+<div class="js-tabcontent" id="videos">
+<h2>Videos</h2>
 </div>
 
-<div id="panel3" class="panel" aria-labelledby="tab3" role="tabpanel">
-<h3>Podcasts</h3>
-</div>
+<div class="js-tabcontent" id="podcasts">
+<h2>Podcasts</h2>
 </div>
 </div>
 </div>

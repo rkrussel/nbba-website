@@ -6,7 +6,7 @@ RewriteBase /nbba-website/staging/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /nbba-website/staging/index.php [L]
+RewriteRule . /nbba-website/staging/index.php
 </IfModule>
 
 # END WordPress
