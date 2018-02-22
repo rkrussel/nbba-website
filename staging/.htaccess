@@ -2,20 +2,11 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /staging/
+RewriteBase /nbba-website/staging/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /staging/index.php [L]
+RewriteRule . /nbba-website/staging/index.php
 </IfModule>
 
-# END WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /nbba1/
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /nbba1/index.php [L]
-</IfModule>
 # END WordPress
