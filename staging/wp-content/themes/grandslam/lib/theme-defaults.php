@@ -71,7 +71,7 @@ function JR_header_right() {
 
 	echo '<nav aria-label="Main Menu">';
 	      wp_nav_menu( array(
-	'wp_term' => 'test',
+	'wp_term' => 'Primary',
 	'container'      => false,
 	'menu_class'     => 'genesis-nav-menu') );
 	echo '<button class="donate-btn">Donate</button>';
