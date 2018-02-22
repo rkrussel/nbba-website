@@ -71,17 +71,17 @@ function JR_header_right() {
 
 	echo '<nav aria-label="Main Menu">';
 	      wp_nav_menu( array(
-	'wp_term' => 'Primary',
+	'wp_term' => 'test',
 	'container'      => false,
 	'menu_class'     => 'genesis-nav-menu') );
-
+	echo '<button class="donate-btn">Donate</button>';
 	echo '</nav>';
 	echo get_search_form();
 	echo '<nav aria-label="Utility">';
-	echo '<ul class="utility-links">';
-	echo '<li><a href=#">Util 1</a></li>';
-	echo '<li><a href="#">Util 2</a></li>';
-	echo '</ul>';
+	echo 	'<ul class="utility-links">';
+	echo 		'<li><a href=#">Util 1</a></li>';
+	echo 		'<li><a href="#">Util 2</a></li>';
+	echo 	'</ul>';
 	echo '</nav>';
 }
 
