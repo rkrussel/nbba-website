@@ -769,16 +769,11 @@ th:first-child {
 	overflow: hidden;
 }
 
-.entry-content .search-form,
-.site-header .search-form {
+.entry-content .search-form {
 	margin-bottom: 40px;
 	width: 50%;
 }
 
-.site-header .search-form {
-	float: right;
-	margin: 12px auto 0;
-}
 
 .post-password-form input[type="submit"],
 .search-form input[type="submit"] {
@@ -1053,7 +1048,6 @@ img.alignright,
 .title-area {
 	float: left;
 	padding: 10px 0;
-	width: 300px;
 }
 
 .header-image .title-area {
@@ -1110,23 +1104,16 @@ img.alignright,
 /* ## Widget Area
 --------------------------------------------- */
 
-.site-header .widget-area {
-	float: right;
-	text-align: right;
-	width: 800px;
-}
 
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
 .genesis-nav-menu {
-	clear: both;
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 600;
 	line-height: 1;
-	width: 100%;
 }
 
 .genesis-nav-menu .menu-item {
@@ -1586,8 +1573,7 @@ p.entry-meta {
 
 	.genesis-nav-menu li,
 	.header-image .title-area,
-	.site-header ul.genesis-nav-menu,
-	.site-header .search-form {
+	.site-header ul.genesis-nav-menu {
 		float: none;
 	}
 
@@ -1599,9 +1585,6 @@ p.entry-meta {
 		text-align: center;
 	}
 
-	.site-header .search-form {
-		margin: 16px auto;
-	}
 
 	/* ### Genesis Responsive Menus */
 

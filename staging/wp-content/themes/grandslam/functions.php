@@ -36,15 +36,15 @@ define( 'CHILD_THEME_VERSION', '1.0' );
 add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
 // Add Accessibility support.
-add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
+add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'rems', 'search-form', 'skip-links' ) );
 
 // Add viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );
 
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
-	'width'           => 600,
-	'height'          => 160,
+	'width'           => 141,
+	'height'          => 141,
 	'header-selector' => '.site-title a',
 	'header-text'     => false,
 	'flex-height'     => true,
@@ -103,6 +103,5 @@ function genesis_sample_comments_gravatar( $args ) {
 
 add_action('wp_enqueue_scripts', 'nbba_extra_scripts');
 function nbba_extra_scripts() {
-
-wp_enqueue_script('accessible-tabpanel', CHILD_URL . '/js/a11y-tablist.js');
+wp_enqueue_script( 'nbba_extra_scripts', CHILD_URL . '/js/van11y-accessible-tab-panel-aria.js', false, '1.0', true );
 }
