@@ -16,10 +16,6 @@ Global
 ---
 **/
 
-p.site-title {
-	display: none;
-}
-
 /**
 ---
 Header
@@ -91,6 +87,11 @@ Front Page
 .grid-blocks {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+}
+
+.grid-blocks .block {
+	max-width: 454px;
 }
 
 .block-a4-list {
