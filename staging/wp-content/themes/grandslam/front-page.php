@@ -37,9 +37,28 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 </div>
 
 <div class="block">
-<h2>Player Spotlight</h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Player Spotlight" width="454" height="256" class="block-img">
-<p>Player Spotlight loop block goes here.</p>
+<h2>Player Spotlight</h2><?php
+$players = array(
+
+	'post_type' => 'player_spotlight',
+	'posts_per_page' => 1);
+
+$playersblock = new wp_query($players);
+if($playersblock->have_posts()) {
+while($playersblock->have_posts()): $playersblock->the_post();
+	$psimg = get_field('avatar_spotlight');
+
+	echo '<img src="' . $psimg['url'] . '" alt="' . $psimg['alt'] . '" class="spotlight-img-fp" style="clear:both;">';
+	echo '<ul class="ps-details-fp">';
+	echo '<li>Name: ' . get_the_title() . '</li>';
+	echo '<li>Team: ' . get_field('team_spotlight') . '</li>';
+	echo '<li>Years Active: ' . get_field('years_spotlight') . '</li>';
+	echo '</ul>';
+	echo '<p>' . get_field('quote_spotlight') . '</p>';
+
+endwhile;
+	wp_reset_postdata();
+} ?>
 </div>
 
 <div class="block">

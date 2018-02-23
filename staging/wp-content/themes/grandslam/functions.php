@@ -99,6 +99,25 @@ function genesis_sample_comments_gravatar( $args ) {
 
 }
 
+/** Add accessible responsive menu **/
+
+https://gist.githubusercontent.com/srikat/3507df90e4b0917768d3/raw/606ca1f4b0263a17ebf11b3730f92340bafe1aab/functions.php
+// Enqueue Scripts and Styles
+add_action( 'wp_enqueue_scripts', 'custom_enqueue_scripts_styles' );
+function custom_enqueue_scripts_styles() {
+
+	// wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,700italic,700,300', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'dashicons' );
+
+	wp_enqueue_script( 'responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+	$output = array(
+		'mainMenu' => __( 'Menu', 'my-theme-text-domain' ),
+		'subMenu'  => __( 'Menu', 'my-theme-text-domain' ),
+	);
+	wp_localize_script( 'responsive-menu', 'ResponsiveMenuL10n', $output );
+
+}
+
 /** Other custom mods **/
 
 add_action('wp_enqueue_scripts', 'nbba_extra_scripts');
