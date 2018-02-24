@@ -101,7 +101,6 @@ function genesis_sample_comments_gravatar( $args ) {
 
 /** Add accessible responsive menu **/
 
-https://gist.githubusercontent.com/srikat/3507df90e4b0917768d3/raw/606ca1f4b0263a17ebf11b3730f92340bafe1aab/functions.php
 // Enqueue Scripts and Styles
 add_action( 'wp_enqueue_scripts', 'custom_enqueue_scripts_styles' );
 function custom_enqueue_scripts_styles() {

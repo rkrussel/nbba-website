@@ -60,6 +60,7 @@ function nbba_footer_blocks() {
 <ul>
 <li><a href="#">Contact the NBBA</a></li>
 <li><a href="#">Contact a team</a></li>
+<li><a href="#">Accessibility Statement</a></li>
 <li><a href="#">Submit website feedback</a></li>
 </ul>
 </div>
