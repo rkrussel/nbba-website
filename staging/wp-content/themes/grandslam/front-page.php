@@ -32,7 +32,7 @@ testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molesti
 <div class="grid-blocks">
 <div class="block">
 <h2>Beep Baseball 101</h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Beep Baseball 101" width="454" height="256" class="block-img">
+	<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/02/beep-ball-101-picture.png" alt="A close-up view of a beep ball resting in a pitcher&apos;s mit on home plate." class="grid-block-imgs">
 <p>Beep Baseball 101 content goes here.</p>
 </div>
 
@@ -63,8 +63,7 @@ endwhile;
 
 <div class="block">
 <h2>Between the Lines</h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Between the lines" width="454" height="256" class="block-img">
-	<div role="application">
+	<img src="<?php echo get_site_url();  ?>/wp-content/uploads/2018/02/between-the-lines-photo.png" alt="A few players huddle around their pitcher, who covers his mouth with his mit." class="grid-block-imgs">
 <div class="js-tabs">
 <ul class="js-tablist" data-existing-hx="h2">
 <li class="js-tablist__item"><a href="#photos" class="js-tablist__link">Photos</a></li>
@@ -85,17 +84,37 @@ endwhile;
 </div>
 </div>
 </div>
-	</div>
 
 <div class="block">
-<h2>On Deck</h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="On Deck" width="454" height="256" class="block-img">
-<p>Calendar block goes here.</p>
+<h2><a href="' . get_site_url() . '/calendar/">On Deck</a></h2>
+	<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/02/calendar-picture.png" alt="Two players sit with a man at a table." class="grid-block-imgs">
+<?php
+$today = date("Y-m-d");  //today's date in MySQL format without the time. Used to compare start date custom field in events.
+$cal_args = array(
+        'post_type' => array('tribe_events',
+	'posts_per_page' => 5),
+		'meta_query' => array(
+				array(
+				'key' => '_EventStartDate',
+				'value' => $today,
+				'compare' => '>=') ) );
+$cal_query = new WP_Query($cal_args);
+
+	if($cal_query->have_posts()) {
+	echo '<ul class="cal-list-fp">';
+	while($cal_query->have_posts()): $cal_query->the_post();
+
+	echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> - ' . tribe_get_start_date() . '</li>';
+	endwhile;
+	wp_reset_postdata();
+}
+
+?>
 </div>
 
 <div class="block">
 <h2><a href="' . get_site_url() . '" title="Go to the NBBA news archive.">Breaking News</a></h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Breaking News" width="454" height="256" class="block-img">
+	<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/02/breaking-news-picture.png" alt="A player hits the ball and barrels toward third base." class="grid-block-imgs">
 
 <?php
 
@@ -119,7 +138,7 @@ endwhile;
 
 <div class="block">
 <h2><a href="' . get_site_url() . '" title="Go to the NBBA blog.">Latest on NBBA.org</a></h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Latest on NBBA.org" width="454" height="256" class="block-img">
+	<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/02/latest-photo.png" alt="A player readies her swing as a ball heads toward home plate." class="grid-block-imgs">
 <?php
 
 $blog = array(
@@ -140,7 +159,7 @@ $blogblock = new wp_query($blog);
 
 <div class="block">
 <h2>Get in the Game</h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Get in the Game" width="454" height="256" class="block-img">
+	<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/02/experience-photo.png" alt="A player from the Taiwan Home Run holds hands with a young girl while walking back to the dugout." class="grid-block-imgs">
 <ul class="block-a4-list">
 <li><a href="' . get_site_url() . '/donate/">Make a donation</a></li>
 <li><a href="#">Become a sponsor</a></li>
@@ -151,7 +170,7 @@ $blogblock = new wp_query($blog);
 
 <div class="block">
 <h2>Sponsors</h2>
-	<img src="http://localhost/nbba-website/staging/wp-content/uploads/2018/02/section-pictures.png" alt="Sponsors" width="454" height="256" class="block-img">
+	<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/02/support-picture.png" alt="A team stands together in a huddle." class="grid-block-imgs">
 <p>Sponsor block and logos go here.</p>
 </div>
 

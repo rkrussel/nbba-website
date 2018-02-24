@@ -10,9 +10,21 @@ This file adds customizations to the Grand Slam theme built on the Genesis frame
 
 add_action( 'genesis_footer', 'nbba_footer_blocks', 5 );
 function nbba_footer_blocks() {
-$grid = '<div class="grid-footer">
+	echo '<h2 class="invisble">Footer</h2>
+<div class="grid-footer">
+	<div class="footer-social-block">
+	<h3 class="invisible">Social Media</h3>
+	<div class="social-block">
+	<ul>
+	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/twitter.png" alt="Twitter"></a></li>
+	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/instagram.png" alt="Instagram"></a></li>
+	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/youtube.png" alt="YouTube"></a></li>
+	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/facebook.png" alt="Facebook"></a></li>
+	</div>
+	<div class="calendar-block">
+	<h3 class="invisible">Calender</h3>' . do_shortcode('[tribe_events]') . '
 <div class="cat-block">
-<h4>About Us</h4>
+<h3>About Us</h3>
 <ul>
 <li><a href="#">About the NBBA</a></li>
 <li><a href="#">Board of Directors</a></li>
@@ -22,7 +34,7 @@ $grid = '<div class="grid-footer">
 </div>
 
 <div class="cat-block">
-<h4>Getting Started</h4>
+<h3>Getting Started</h3>
 <ul>
 <li><a href="#">Beep Baseball 101</a></li>
 <li><a href=#">Find a Team</a></li>
@@ -34,7 +46,7 @@ $grid = '<div class="grid-footer">
 </div>
 
 <div class="cat-block">
-<h4>World Series and Tournaments</h4>
+<h3>World Series and Tournaments</h3>
 <ul>
 <li><a href=#">2018 World Series</a></li>
 <li><a href=#">Hosting the World Series</a></li>
@@ -44,7 +56,7 @@ $grid = '<div class="grid-footer">
 </div>
 
 <div class="cat-block">
-<h4>Help and Contact</h4>
+<h3>Help and Contact</h3>
 <ul>
 <li><a href="#">Contact the NBBA</a></li>
 <li><a href="#">Contact a team</a></li>
@@ -52,7 +64,6 @@ $grid = '<div class="grid-footer">
 </ul>
 </div>
 </div>';
-echo $grid;
 }
 
 /** Modify site credits **/
@@ -76,12 +87,13 @@ function JR_header_right() {
 	'menu_class'     => 'genesis-nav-menu') );
 
 	echo '</nav>';
-	echo get_search_form();
-	echo '<nav aria-label="Utility">';
-	echo '<ul class="utility-links">';
-	echo '<li><a href=#">Util 1</a></li>';
-	echo '<li><a href="#">Util 2</a></li>';
+	echo '<form id="searchbar" role="search" method="get" class="search-form" action="' . get_site_url() . '/">
+	<label><span class="invisible">Search the NBBA</span>
+		<input type="search" class="search-field" placeholder="Search the NBBA..." value="" name="s" title="Search" />
+	</label><input type="submit" class="search-submit" value="Search" />
+</form>';
+	echo '<ul class="utility-links" id="utility-links">';
+	echo '<li><a href="#" id="searchtoggl" aria-label="Toggle Search" role="button" onclick="toggle_search()"><i class="fa fa-search fa-lg"></i></a></li>';
 	echo '</ul>';
-	echo '</nav>';
 }
 

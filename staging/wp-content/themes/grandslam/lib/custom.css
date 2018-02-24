@@ -36,6 +36,10 @@ Header
 	width: 87%!Important;
 }
 
+#searchbar {
+	display: none;
+}
+
 .search-form {
 	display: inline;
 	float: left;

@@ -123,4 +123,6 @@ function custom_enqueue_scripts_styles() {
 add_action('wp_enqueue_scripts', 'nbba_extra_scripts');
 function nbba_extra_scripts() {
 wp_enqueue_script( 'nbba_extra_scripts', CHILD_URL . '/js/van11y-accessible-tab-panel-aria.js', false, '1.0', true );
+wp_enqueue_script( 'search-toggle', CHILD_URL . '/js/search-toggle.js', false, '1.0', true );
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 }
