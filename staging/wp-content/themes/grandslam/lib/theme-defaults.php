@@ -10,19 +10,17 @@ This file adds customizations to the Grand Slam theme built on the Genesis frame
 
 add_action( 'genesis_footer', 'nbba_footer_blocks', 5 );
 function nbba_footer_blocks() {
-	echo '<h2 class="invisble">Footer</h2>
+	echo '<h2 class="invisible">Footer</h2>
+	<div class="social-block-table">
+	<ul class="social-footer">
+	<li><a href="https://twitter.com/nbba?lang=en"><img src="' . get_stylesheet_directory_uri() . '/lib/images/twitter.png" alt="Twitter"></a></li>
+	<li><a href="http://www.therealinsta.com/user/3811850217"><img src="' . get_stylesheet_directory_uri() . '/lib/images/instagram.png" alt="Instagram"></a></li>
+	<li><a href="https://www.youtube.com/user/nbba1976"><img src="' . get_stylesheet_directory_uri() . '/lib/images/youtube.png" alt="YouTube"></a></li>
+	<li><a href="https://www.facebook.com/NBBAPublicRelations"><img src="' . get_stylesheet_directory_uri() . '/lib/images/facebook.png" alt="Facebook"></a></li>
+</ul>
+</div>
+
 <div class="grid-footer">
-	<div class="footer-social-block">
-	<h3 class="invisible">Social Media</h3>
-	<div class="social-block">
-	<ul>
-	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/twitter.png" alt="Twitter"></a></li>
-	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/instagram.png" alt="Instagram"></a></li>
-	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/youtube.png" alt="YouTube"></a></li>
-	<li><a href="#"><img src="' . get_stylesheet_directory_uri() . '/lib/assets/facebook.png" alt="Facebook"></a></li>
-	</div>
-	<div class="calendar-block">
-	<h3 class="invisible">Calender</h3>' . do_shortcode('[tribe_events]') . '
 <div class="cat-block">
 <h3>About Us</h3>
 <ul>
@@ -60,7 +58,7 @@ function nbba_footer_blocks() {
 <ul>
 <li><a href="#">Contact the NBBA</a></li>
 <li><a href="#">Contact a team</a></li>
-<li><a href="#">Accessibility Statement</a></li>
+<li><a href=#">Accessibility Statement</a></li>
 <li><a href="#">Submit website feedback</a></li>
 </ul>
 </div>

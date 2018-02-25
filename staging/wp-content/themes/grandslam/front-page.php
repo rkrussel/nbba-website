@@ -12,22 +12,20 @@ add_action('genesis_entry_content', 'nbba_front_page_content');
 function nbba_front_page_content() {
 
 ?>
+<div class="fp-welcome-box">
+<h1>Welcome to the Home of Beep Baseball</h1>
+<p>Welcome to the National Beep Baseball Association: facilitating and providing the adaptive version of America's favorite pastime for the blind, low-vision and legally blind since 1976. This is your primary source and home to find information about the game of beep baseball, so take a peek.</p>
+</div>
 
-<h1>Welcome to the National Beep Baseball Association</h1>
-
-testing 2 asdf Lorem ipsum dolor sit amet, tempor nonumes qui eu, quodsi molestie appareat et quo. Ex delicata sapientem sit, per reprimique contentiones no, habeo persius phaedrum ne ius. Cu rebum ponderum mei. Dolores democritum reformidans an nec, ancillae maluisset concludaturque sed cu, eu sed nemore euismod delicatissimi. Ex suscipit incorrupte cum, at mel animal mnesarchum. In primis habemus splendide cum, feugiat incorrupte at vix.</p>
-
-<p>His cu illud ceteros salutatus, sed mazim principes cu, vix et labores facilisi. Pri an odio libris discere. Sea ei adipisci sententiae, cu usu movet consequat. Philosophia definitionem eum ad. Et cibo laudem per, adipisci voluptaria dissentiunt ea usu, utinam repudiare elaboraret at mea.</p>
-
-<nav class="quick-actions">
-<ul>
+<div class="quick-actions-table">
+<ul class="quick-actions">
 <li><a href="' . get_site_url() . '/teams/">Locate a team</a></li>
 <li><a href="#">Start a new team</a></li>
 <li><a href="' . get_site_url() . '/equipment/">Purchase equipment</a></li>
 <li><a href="#">Get 2018 World Series info</a></li>
 <li><a href="' . get_site_url() . '/donate/">Make a donation</a></li>
 </ul>
-</nav>
+</div>
 
 <div class="grid-blocks">
 <div class="block">

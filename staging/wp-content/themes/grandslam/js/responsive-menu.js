@@ -1,14 +1,11 @@
 ( function ( document, $, undefined ) {
-
-	$( 'body' ).addClass( 'js' );
-
 	'use strict';
 
-	var responsive_menu     = {},
+	var leaven              = {},
 		mainMenuButtonClass = 'menu-toggle',
 		subMenuButtonClass  = 'sub-menu-toggle';
 
-	responsive_menu.init = function() {
+	leaven.init = function() {
 		var toggleButtons = {
 			menu : $( '<button />', {
 				'class' : mainMenuButtonClass,
@@ -16,7 +13,7 @@
 				'aria-pressed' : false,
 				'role' : 'button'
 				} )
-				.append( responsive_menu.params.mainMenu ),
+				.append( leaven.params.mainMenu ),
 			submenu : $( '<button />', {
 				'class' : subMenuButtonClass,
 				'aria-expanded' : false,
@@ -25,15 +22,15 @@
 				} )
 				.append( $( '<span />', {
 					'class' : 'screen-reader-text',
-					text : responsive_menu.params.subMenu
+					text : leaven.params.subMenu
 				} ) )
 		};
-		$( '.nav-primary, .nav-secondary, .nav-header' ).before( toggleButtons.menu ); // add the main nav buttons
+		$( 'nav' ).before( toggleButtons.menu ); // add the main nav buttons
 		$( 'nav .sub-menu' ).before( toggleButtons.submenu ); // add the submenu nav buttons
 		$( '.' + mainMenuButtonClass ).each( _addClassID );
-		$( window ).on( 'resize.responsive_menu', _doResize ).triggerHandler( 'resize.responsive_menu' );
-		$( '.' + mainMenuButtonClass ).on( 'click.responsive_menu-mainbutton', _mainmenuToggle );
-		$( '.' + subMenuButtonClass ).on( 'click.responsive_menu-subbutton', _submenuToggle );
+		$( window ).on( 'resize.leaven', _doResize ).triggerHandler( 'resize.leaven' );
+		$( '.' + mainMenuButtonClass ).on( 'click.leaven-mainbutton', _mainmenuToggle );
+		$( '.' + subMenuButtonClass ).on( 'click.leaven-subbutton', _submenuToggle );
 	};
 
 	// add nav class and ID to related button
@@ -46,19 +43,6 @@
 			id = 'id';
 		}
 		$this.attr( 'id', 'mobile-' + $( nav ).attr( id ) );
-	}
-
-	// check CSS rule to determine width
-	function _combineMenus(){
-		if ($( '.js nav' ).css( 'position' ) == 'relative' ){ // depends on .js nav having position: relative; in style.css
-			$( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
-			$( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
-			$( '.nav-secondary' ).hide();
-		} else {
-			$( '.nav-secondary' ).show();
-			$( 'ul.menu-primary > li.moved-item' ).appendTo( 'ul.menu-secondary' );
-			$( 'ul.menu-secondary > li' ).removeClass( 'moved-item' );
-		}
 	}
 
 	// Change Skiplinks and Superfish
@@ -80,9 +64,7 @@
 		_toggleAria( $this, 'aria-pressed' );
 		_toggleAria( $this, 'aria-expanded' );
 		$this.toggleClass( 'activated' );
-		// $( 'nav.nav-primary' ).slideToggle( 'fast' ); //changed to .nav-primary since we're not toggling .nav-secondary
-		$this.next('nav').slideToggle( 'fast' );
-
+		$this.next( 'nav, .sub-menu' ).slideToggle( 'fast' );
 	}
 
 	/**
@@ -168,24 +150,26 @@
 	 */
 	function _toggleAria( $this, attribute ) {
 		$this.attr( attribute, function( index, value ) {
-			return 'false' === value;
+			return _ariaReturn( value );
 		});
 	}
 
+	/**
+	 * update aria-xx value of an attribute
+	 * @param  {aria-xx} value passed from function
+	 * @return {bool}
+	 */
+	function _ariaReturn( value ) {
+		return 'false' === value ? 'true' : 'false';
+	}
+
 	$(document).ready(function () {
+		leaven.params = typeof LeavenL10n === 'undefined' ? '' : LeavenL10n;
 
-		// run test on initial page load
-		// _combineMenus();
-
-		// run test on resize of the window
-		// $( window ).resize( _combineMenus );
-
-		responsive_menu.params = typeof ResponsiveMenuL10n === 'undefined' ? '' : ResponsiveMenuL10n;
-
-		if ( typeof responsive_menu.params !== 'undefined' ) {
-			responsive_menu.init();
+		if ( typeof leaven.params !== 'undefined' ) {
+			leaven.init();
 		}
-
 	});
 
 })( document, jQuery );
+

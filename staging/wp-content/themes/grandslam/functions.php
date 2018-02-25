@@ -36,7 +36,7 @@ define( 'CHILD_THEME_VERSION', '1.0' );
 add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
 // Add Accessibility support.
-add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'rems', 'search-form', 'skip-links' ) );
+add_theme_support( 'genesis-accessibility', array( '404-page', 'rems', 'search-form', 'skip-links' ) );
 
 // Add viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );
@@ -99,29 +99,16 @@ function genesis_sample_comments_gravatar( $args ) {
 
 }
 
-/** Add accessible responsive menu **/
-
-// Enqueue Scripts and Styles
-add_action( 'wp_enqueue_scripts', 'custom_enqueue_scripts_styles' );
-function custom_enqueue_scripts_styles() {
-
-	// wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,700italic,700,300', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'dashicons' );
-
-	wp_enqueue_script( 'responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
-	$output = array(
-		'mainMenu' => __( 'Menu', 'my-theme-text-domain' ),
-		'subMenu'  => __( 'Menu', 'my-theme-text-domain' ),
-	);
-	wp_localize_script( 'responsive-menu', 'ResponsiveMenuL10n', $output );
-
-}
-
 /** Other custom mods **/
 
 add_action('wp_enqueue_scripts', 'nbba_extra_scripts');
 function nbba_extra_scripts() {
 wp_enqueue_script( 'nbba_extra_scripts', CHILD_URL . '/js/van11y-accessible-tab-panel-aria.js', false, '1.0', true );
-wp_enqueue_script( 'search-toggle', CHILD_URL . '/js/search-toggle.js', false, '1.0', true );
+wp_enqueue_script( 'search-toggle', CHILD_URL . '/js/search-toggle.js', false, '1.0', false );
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
+	wp_enqueue_script( 'leaven-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+	$output = array(
+		'mainMenu' => __( 'Menu', 'leaven' ),
+		'subMenu'  => __( 'Menu', 'leaven' ), );
+	wp_localize_script( 'leaven-responsive-menu', 'LeavenL10n', $output );
 }
